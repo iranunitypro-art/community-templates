@@ -1,0 +1,50 @@
+# Windows DHCP Server – Zabbix Template
+
+Monitor Microsoft DHCP Server service, scope utilization, lease activity, and error conditions.
+
+## Overview
+Tracks DHCP service health, discovers IPv4 scopes, monitors each scope’s utilization, lease/requests rate, and common failure indicators (NACKs/Declines).
+
+## Features
+- Service status: **DHCPServer**
+- LLD: **Auto-discovery of IPv4 scopes** (PowerShell)
+- Scope utilization % (per-scope)
+- Perf counters: `DHCP Server\Requests/sec`, `DHCP Server\Declines/sec`, `DHCP Server\Nacks/sec`
+- (Optional) Event log checks for authorization or binding issues
+
+## Triggers
+- **DHCP service down**
+- **Scope utilization > warn/crit** (per-scope)
+- **High NACKs/sec** (potential relay/network issues)
+- **No free addresses in scope**
+
+## Macros
+| Macro | Default | Description |
+|------|---------|-------------|
+| `{$DHCP.SCOPE_UTIL.WARN}` | `80` | % usage warning |
+| `{$DHCP.SCOPE_UTIL.CRIT}` | `90` | % usage critical |
+| `{$DHCP.NACKS.MAX}` | `5` | NACKs/sec threshold |
+
+## Requirements
+- Zabbix **7.x** agent
+- PowerShell available
+- DHCP Server role installed and the agent running with rights to query scopes
+
+## Installation
+1. **Import** `template_windows_dhcp_server.yaml`.
+2. **Link** to DHCP servers.
+3. Verify LLD discovers scopes; wait for per-scope items.
+4. Tune utilization thresholds per environment.
+
+## Tested
+- Zabbix 6.0
+- Windows Server 2019/2022 DHCP
+
+## Notes
+If you use split-scope or failover, correlate utilization across peers before alarming.
+
+## License
+MIT
+
+## Author
+Mohammad.Nasiri@live.com

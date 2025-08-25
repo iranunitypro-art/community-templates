@@ -1,0 +1,101 @@
+zabbix_export:
+  version: '6.0'
+  date: '2024-02-14T10:27:46Z'
+  groups:
+    - uuid: 846977d1dfed4968bc5f8bdb363285bc
+      name: 'Templates/Operating systems'
+  templates:
+    - uuid: 59bbe872c4ad46cf805ff60aa20c2472
+      template: 'Microsoft Windows DNS Server'
+      name: 'Microsoft Windows DNS Server'
+      groups:
+        - name: 'Templates/Operating systems'
+      items:
+        - uuid: 95e6f3e8ddc34a3e84c51a53c2bb1c9d
+          name: 'DNS Zone Creation Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,512,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 5be48528a49b4d26bf34bd655ad72e49
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,512,,skip])=1'
+              name: 'DNS Zone Creation Notification'
+              priority: WARNING
+        - uuid: fc3d6a84f074447d8ce5ad1b4a63f6c3
+          name: 'DNZ Zone Update Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,514,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 5d1af37860ba4487812ad13a0772a273
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,514,,skip])=1'
+              name: 'DNZ Zone Update Notification'
+              priority: INFO
+        - uuid: edcb68a2eb6d4e65a0e6289ba6ef91b3
+          name: 'DNS Records Change Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,515|516,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 4a431e50f3c045ae92014d1c43746592
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,515|516,,skip])=1'
+              name: 'DNS Records Change Notification'
+              priority: AVERAGE
+        - uuid: 8e44b27f4168420a84fbbdfe29a80e95
+          name: 'DNS Forwarder Settings Change'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,537,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 0b5e3aa758ef47ce818481598198e319
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,537,,skip])=1'
+              name: 'DNS Forwarder Settings Change'
+              priority: INFO
+        - uuid: dae8a68aa48240d69429d7119786960a
+          name: 'DNS Roothint Change Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,540|556,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: ac3af901276d4cf6bc8f8809e40c8862
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,540|556,,skip])=1'
+              name: 'DNS Roothint Change Notification'
+              priority: WARNING
+        - uuid: edd8a9e1172142ae8928295eadd98ea6
+          name: 'DNS Server Settings Change Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,541,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: d04192dcdace441399cbf33f4e53cd24
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,541,,skip])=1'
+              name: 'DNS Server Settings Change Notification'
+              priority: INFO
+        - uuid: 0824344b79b94cda85e5b078814009bc
+          name: 'DNS Service Status Change'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,550,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: b03ef5745dc047fd8e7a022c759c99df
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,550,,skip])=1'
+              name: 'DNS Service Status Change'
+              priority: DISASTER
+        - uuid: a9e501a740614c8bb88e23b9bd074528
+          name: 'DNS Listener Network Interface Notification'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-DNSServer/Audit,,,,557,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 66483ec3195b434ca8e1adbc66e6714a
+              expression: 'logeventid(/Microsoft Windows DNS Server/eventlog[Microsoft-Windows-DNSServer/Audit,,,,557,,skip])=1'
+              name: 'DNS Listener Network Interface Notification'
+              priority: HIGH

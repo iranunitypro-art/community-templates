@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2024-02-14T08:34:32Z</date>
+    <groups>
+        <group>
+            <uuid>846977d1dfed4968bc5f8bdb363285bc</uuid>
+            <name>Templates/Operating systems</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>ae53c77e52ae409380cef8afa7870902</uuid>
+            <template>Windows Firewall</template>
+            <name>Windows Firewall</name>
+            <groups>
+                <group>
+                    <name>Templates/Operating systems</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>957e19d4f9fc462cb62f07a5a0f9f58f</uuid>
+                    <name>A Windows Defender Firewall setting in profile has changed.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2003,,skip]</key>
+                    <delay>20s</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>0544e7b1b7b946bdb92d9371f6cbb615</uuid>
+                            <expression>logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2003,,skip])=1</expression>
+                            <name>A Windows Defender Firewall setting in profile has changed.</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>0f3dffa61e844b79bca9ed8f835eff0c</uuid>
+                    <name>A rule has been deleted in the Windows Defender Firewall exception list.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2006,,skip]</key>
+                    <delay>20s</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>468dc7ccc4df47bdac93acec72e4dfd4</uuid>
+                            <expression>logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2006,,skip])=1</expression>
+                            <name>A rule has been deleted in the Windows Defender Firewall exception list.</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>c39d632100db4074ae3174eb7d296561</uuid>
+                    <name>Windows Defender Firewall has been reset to its default configuration.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2032,,skip]</key>
+                    <delay>20s</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>3726b630f9024213aa9c9ef24b654608</uuid>
+                            <expression>logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2032,,skip])=1</expression>
+                            <name>Windows Defender Firewall has been reset to its default configuration.</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>1a99c672dcc24531bff8d2a2b26dfdc5</uuid>
+                    <name>A rule has been added to the Windows Defender Firewall exception list.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2097,,skip]</key>
+                    <delay>20s</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>be19e4d35c124c058f5a328e94b34432</uuid>
+                            <expression>logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2097,,skip])=1</expression>
+                            <name>A rule has been added to the Windows Defender Firewall exception list.</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>04dd3a7e98364722a9add6bc17e4a082</uuid>
+                    <name>A rule has been modified in the Windows Defender Firewall exception list.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2099,,skip]</key>
+                    <delay>20s</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>a2e012f861af4dd6af216924e77792ba</uuid>
+                            <expression>logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2099,,skip])=1</expression>
+                            <name>A rule has been modified in the Windows Defender Firewall exception list.</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

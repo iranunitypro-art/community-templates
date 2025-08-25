@@ -1,0 +1,51 @@
+# Windows Task Scheduler – Zabbix Template
+
+Discover and monitor scheduled tasks: last run/result, next run time, enabled state, and overdue/failed executions.
+
+## Overview
+Uses PowerShell (Get-ScheduledTask / Get-ScheduledTaskInfo) to discover tasks and collect per-task status/metadata.
+
+## Features
+- Service status: **Schedule** (Task Scheduler)
+- LLD: **Discover tasks** (with optional include/exclude regex)
+- Per-task:
+  - Last run time / result (exit code)
+  - Next run time
+  - Enabled/disabled
+  - Last run duration (if available)
+
+## Triggers
+- **Task Scheduler service down**
+- **Task failed (LastTaskResult ≠ 0)**
+- **Task disabled** (if not expected)
+- **Task overdue** (now > NextRun for N minutes or no run in M minutes)
+
+## Macros
+| Macro | Default | Description |
+|------|---------|-------------|
+| `{$TS.IGNORE_REGEX}` | `^$` | Regex to ignore tasks |
+| `{$TS.MAX_AGE.MIN}` | `120` | Max minutes since last successful run |
+| `{$TS.OVERDUE.MIN}` | `15` | Minutes past NextRun to alert |
+
+## Requirements
+- Zabbix **7.x** agent
+- PowerShell available; agent runs with rights to query tasks
+
+## Installation
+1. **Import** `template_windows_task_scheduler.yaml`.
+2. **Link** to Windows hosts.
+3. Adjust `{$TS.IGNORE_REGEX}` to skip noisy system tasks.
+4. Wait for discovery to create per-task items/triggers.
+
+## Tested
+- Zabbix 6.0
+- Windows Server 2016/2019/2022, Windows 10/11
+
+## Notes
+Some built-in tasks return non-zero codes by design; use `{$TS.IGNORE_REGEX}` to filter.
+
+## License
+MIT
+
+## Author
+Mohammad.Nasiri@live.com

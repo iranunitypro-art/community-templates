@@ -1,0 +1,73 @@
+zabbix_export:
+  version: '6.0'
+  date: '2024-02-14T08:34:30Z'
+  groups:
+    - uuid: 846977d1dfed4968bc5f8bdb363285bc
+      name: 'Templates/Operating systems'
+  templates:
+    - uuid: ae53c77e52ae409380cef8afa7870902
+      template: 'Windows Firewall'
+      name: 'Windows Firewall'
+      groups:
+        - name: 'Templates/Operating systems'
+      items:
+        - uuid: 957e19d4f9fc462cb62f07a5a0f9f58f
+          name: 'A Windows Defender Firewall setting in profile has changed.'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2003,,skip]'
+          delay: 20s
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 0544e7b1b7b946bdb92d9371f6cbb615
+              expression: 'logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2003,,skip])=1'
+              name: 'A Windows Defender Firewall setting in profile has changed.'
+              priority: HIGH
+        - uuid: 0f3dffa61e844b79bca9ed8f835eff0c
+          name: 'A rule has been deleted in the Windows Defender Firewall exception list.'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2006,,skip]'
+          delay: 20s
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 468dc7ccc4df47bdac93acec72e4dfd4
+              expression: 'logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2006,,skip])=1'
+              name: 'A rule has been deleted in the Windows Defender Firewall exception list.'
+              priority: HIGH
+        - uuid: c39d632100db4074ae3174eb7d296561
+          name: 'Windows Defender Firewall has been reset to its default configuration.'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2032,,skip]'
+          delay: 20s
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 3726b630f9024213aa9c9ef24b654608
+              expression: 'logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2032,,skip])=1'
+              name: 'Windows Defender Firewall has been reset to its default configuration.'
+              priority: HIGH
+        - uuid: 1a99c672dcc24531bff8d2a2b26dfdc5
+          name: 'A rule has been added to the Windows Defender Firewall exception list.'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2097,,skip]'
+          delay: 20s
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: be19e4d35c124c058f5a328e94b34432
+              expression: 'logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2097,,skip])=1'
+              name: 'A rule has been added to the Windows Defender Firewall exception list.'
+              priority: WARNING
+        - uuid: 04dd3a7e98364722a9add6bc17e4a082
+          name: 'A rule has been modified in the Windows Defender Firewall exception list.'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2099,,skip]'
+          delay: 20s
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: a2e012f861af4dd6af216924e77792ba
+              expression: 'logeventid(/Windows Firewall/eventlog[Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,,,,2099,,skip])=1'
+              name: 'A rule has been modified in the Windows Defender Firewall exception list.'
+              priority: WARNING

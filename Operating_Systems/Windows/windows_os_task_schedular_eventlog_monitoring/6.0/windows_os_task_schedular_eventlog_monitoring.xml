@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2024-02-14T10:29:12Z</date>
+    <groups>
+        <group>
+            <uuid>846977d1dfed4968bc5f8bdb363285bc</uuid>
+            <name>Templates/Operating systems</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>71329ec7e53c4cc1bb8c28c6d94080b0</uuid>
+            <template>Windows Task Scheduler</template>
+            <name>Windows Task Scheduler</name>
+            <groups>
+                <group>
+                    <name>Templates/Operating systems</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>c3f3314e13a7449bb7ca26b960a6af11</uuid>
+                    <name>A task has been started in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,100,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>9dd8da0121c04955b7e98812b59c6502</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,100,,skip])=1</expression>
+                            <name>A task has been started in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>af065b4df8fc4d3e91c3d9c8b70e492d</uuid>
+                    <name>A task has been completed in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,102,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>2a36b012805f4ef2a7078f8d4f01dfca</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,102,,skip])=1</expression>
+                            <name>A task has been completed in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>67372a2b97de4cd7aa02f26998af537d</uuid>
+                    <name>Actions start failed in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,103,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>0c2ceca7d3424a2f841196bbf6beb239</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,103,,skip])=1</expression>
+                            <name>Actions start failed in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>b456e5dc705443d8b0ba61ca0da0641f</uuid>
+                    <name>A task has been triggered in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,107,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>c029f3c28f1643a4a02e4d763704d336</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,107,,skip])=1</expression>
+                            <name>A task has been triggered in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>962c9b98ac7c4a6bb2aebedbc5f9f689</uuid>
+                    <name>A task has been triggered on event in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,108,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>d250957358eb4ccc8953404394435ead</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,108,,skip])=1</expression>
+                            <name>A task has been triggered on event in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>85e388722a784f9f95f79dc5a1751a05</uuid>
+                    <name>A task has been triggered by a user in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,110,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>838ed5f7ea924bafa61e8efcdcb54e5b</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,110,,skip])=1</expression>
+                            <name>A task has been triggered by a user in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>fa212550ab6b435ab17d5f43cc32076e</uuid>
+                    <name>A task has beed created in Task Scheduler.</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,129,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>f970db5b3d2349e8adc4f00fa940ee1b</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,129,,skip])=1</expression>
+                            <name>A task has beed created in Task Scheduler.</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>466f49a5c19241c98b5bfa6c4f98fbec</uuid>
+                    <name>A task registration has been updated  in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,140,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>2930df380c624845893bee68361fb258</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,140,,skip])=1</expression>
+                            <name>A task registration has been updated  in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>69b4a2e67bbb4af9b954aac0c33b71a2</uuid>
+                    <name>An action has been started in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,200,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>e058c4a1a6be49ee8f4c203cd5883bf5</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,200,,skip])=1</expression>
+                            <name>An action has been started in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>8f92601b7a024e7a9fc9c2a8dc3247ca</uuid>
+                    <name>An action has been completed in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,201,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>f82b67b524d24fa081309afaf8056074</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,201,,skip])=1</expression>
+                            <name>An action has been completed in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>1bef3681d2474c63afd65ac1e93756c3</uuid>
+                    <name>An action failed in Task Scheduler</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,202,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>29bfaf0a59ad45629edee2321d2e97cb</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,202,,skip])=1</expression>
+                            <name>An action failed in Task Scheduler</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>582a439b6f3c4f2fb3ba580ed6d10a4d</uuid>
+                    <name>Task Scheduler did not launch task</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,322,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>06b936c654b3432a944ac668197c5091</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,322,,skip])=1</expression>
+                            <name>Task Scheduler did not launch task</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>54691e785455440ca6f8d1fecf342d36</uuid>
+                    <name>Task Scheduler queued instance</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,325,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>886dcfd7c6bf4e30a8da0bac58d6e7ba</uuid>
+                            <expression>logeventid(/Windows Task Scheduler/eventlog[Microsoft-Windows-TaskScheduler/Operational,,,,325,,skip])=1</expression>
+                            <name>Task Scheduler queued instance</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

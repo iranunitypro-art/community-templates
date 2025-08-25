@@ -1,0 +1,52 @@
+# Windows Firewall – Zabbix Template
+
+Monitor Windows Defender Firewall (profiles, service, rule changes, and dropped/blocked activity).
+
+## Overview
+This template collects firewall profile states, Windows Firewall service health, rule counts, and optional security/audit events that indicate blocked traffic or policy changes.
+
+## Features
+- Service status: **MpsSvc** (Windows Firewall)
+- Profile states: **Domain / Private / Public** (On/Off)
+- Rule counts (enabled/disabled, inbound/outbound) via PowerShell
+- Last policy change timestamp (event)
+- (Optional) Blocked connection events (requires audit policy)
+
+## Triggers
+- **Firewall service stopped**
+- **Any firewall profile is Off**
+- **Firewall rules changed recently** (policy change detected)
+- **Spike in blocked connections** (optional, needs audit events)
+
+## Macros
+| Macro | Default | Description |
+|------|---------|-------------|
+| `{$FIREWALL.REQUIRED_PROFILES}` | `domain,private,public` | Comma list; must be `On` |
+| `{$FIREWALL.BLOCKED_SPIKE}` | `200` | Events in 5m to trigger spike |
+| `{$FIREWALL.CHANGE_LOOKBACK}` | `15m` | Window for policy-change trigger |
+
+## Requirements
+- Zabbix **7.x** (agent or agent2 on Windows)
+- PowerShell available to the Zabbix agent service
+- (Optional) Enable audit to collect blocked events:  
+  - Security policy → Advanced Audit Policy → **Filtering Platform** (Block)  
+  - Ensure event log access for the agent
+
+## Installation
+1. **Import** the `template_windows_firewall.yaml`.
+2. **Link** the template to Windows hosts.
+3. (Optional) Enable audit policy if you want blocked-connection triggers.
+4. Verify latest data for profiles and service.
+
+## Tested
+- Zabbix 6.0
+- Windows Server 2019/2022
+
+## Notes
+High blocked counts typically indicate misconfigured rules or scans. Tune `{$FIREWALL.BLOCKED_SPIKE}` to your environment.
+
+## License
+MIT
+
+## Author
+Mohammad.Nasiri@live.com

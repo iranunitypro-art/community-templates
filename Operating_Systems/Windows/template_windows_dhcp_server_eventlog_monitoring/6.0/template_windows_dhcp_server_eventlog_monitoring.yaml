@@ -1,0 +1,178 @@
+zabbix_export:
+  version: '6.0'
+  date: '2024-02-15T11:56:17Z'
+  groups:
+    - uuid: 846977d1dfed4968bc5f8bdb363285bc
+      name: 'Templates/Operating systems'
+  templates:
+    - uuid: 2d351ba9de6240999c83c6df16f2e4a5
+      template: 'Windows Server DHCP Server'
+      name: 'Windows Server DHCP Server'
+      groups:
+        - name: 'Templates/Operating systems'
+      items:
+        - uuid: 15692b4192c44b04ab5ce644adc9feed
+          name: 'DHCP Server | Internal Scope for IPv4 is Configured'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,70,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 52c18ecccb6d4381a6d6b651c46f4df4
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,70,,skip])=1'
+              name: 'DHCP Server | Internal Scope for IPv4 is Configured'
+              priority: INFO
+        - uuid: 347f858756f84b88865c63a84ea6731e
+          name: 'DHCP Server | Scope Deleted'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,72,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 8892c999f4b4462f9f8effe4f41f6ccd
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,72,,skip])=1'
+              name: 'DHCP Server | Scope Deleted'
+              priority: INFO
+        - uuid: d0f03393b9b541bda6d336ee2376bdf4
+          name: 'DHCP Server | Scope Activated'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,73,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: f65d0b7f6f894ee3870abbc85356cf73
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,73,,skip])=1'
+              name: 'DHCP Server | Scope Activated'
+              priority: INFO
+        - uuid: 646f9bb4f1d846c0ad51314d432e9537
+          name: 'DHCP Server | Lease Duration Changes'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,75,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: cc7ac66cebea43afa2d1ef4911f835ca
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,75,,skip])=1'
+              name: 'DHCP Server | Lease Duration Changes'
+              priority: INFO
+        - uuid: ae0e6231f6fd4a0fb134039212ad8728
+          name: 'DHCP Server | Scope Options Changed'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,76,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 1e7d179541fe4080963931c012caca95
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,76,,skip])=1'
+              name: 'DHCP Server | Scope Options Changed'
+              priority: INFO
+        - uuid: 3e1f3847eb364c7bb3d08cf74ffb42c6
+          name: 'DHCP Server | Dynamic Update Settings Changed'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,77|84|165,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: b7a5121742ab403883f876190c6e1d72
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,77|84|165,,skip])=1'
+              name: 'DHCP Server | Dynamic Update Settings Changed'
+              priority: INFO
+        - uuid: 4d511ab6648d4f67a04595c8e709914f
+          name: 'DHCP Server | IP Address Is Reserved'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,106,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: ad2b7da5af694bb3b01d07aab9393657
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,106,,skip])=1'
+              name: 'DHCP Server | IP Address Is Reserved'
+              priority: INFO
+        - uuid: d6ef0e6252654984ac63a10aadadad61
+          name: 'DHCP Server | Reserved IP Address Removed'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,107,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: b6cfd8cfbc5f41e596da81bbbcfcc237
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,107,,skip])=1'
+              name: 'DHCP Server | Reserved IP Address Removed'
+              priority: INFO
+        - uuid: 7133b50e06cd4266a18b73d01bcab5b2
+          name: 'DHCP Server | Added exclusion IP Address range'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,119,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 4e23c0f3d8e54cf9a46ab5165ee61625
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,119,,skip])=1'
+              name: 'DHCP Server | Added exclusion IP Address range'
+              priority: INFO
+        - uuid: 9a5861e2c43e4294882aad483888968d
+          name: 'DHCP Server | A MAC Address has been added to the Allowed list'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,123,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: fd3d837ca33c433eab8f5fe6d333aa5d
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,123,,skip])=1'
+              name: 'DHCP Server | A MAC Address has been added to the Allowed list'
+              priority: INFO
+        - uuid: 33205a08d79b445e8e134c02e5af6dc0
+          name: 'DHCP Server | A MAC Address has removed from the Allowed list'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,124,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 3d077e1b3b3d4e4796bd444178f596fe
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,124,,skip])=1'
+              name: 'DHCP Server | A MAC Address has removed from the Allowed list'
+              priority: INFO
+        - uuid: 7bfe65eb027543b8995d0d5426ba7dfa
+          name: 'DHCP Server | A MAC Address has been added to the Deny list'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,127,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 1b98b310c6114a27bd52fb98f3651d5c
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,127,,skip])=1'
+              name: 'DHCP Server | A MAC Address has been added to the Deny list'
+              priority: INFO
+        - uuid: 92370128bd744aa5a57a1cf2a9747029
+          name: 'DHCP Server | A MAC Address has removed from the Deny list'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,128,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 0a9dc2a5ee9e4a84a5694ad46cf8cd77
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,128,,skip])=1'
+              name: 'DHCP Server | A MAC Address has removed from the Deny list'
+              priority: INFO
+        - uuid: c9f843ff7c5048e8ab6f76cd382ee656
+          name: 'DHCP Server | Policy Changes'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,20225|20221|20223|20231,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: dbfafdf741cf49368c088fd87f00bd54
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,20225|20221|20223|20231,,skip])=1'
+              name: 'DHCP Server | Policy Changes'
+              priority: INFO
+        - uuid: 3ff65290384a47a3b216e0eeb18a394c
+          name: 'DHCP Server | Policy Removed'
+          type: ZABBIX_ACTIVE
+          key: 'eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,20227,,skip]'
+          trends: '0'
+          value_type: LOG
+          triggers:
+            - uuid: 5a967c4c940546e4aa67a14f1d9a0e9f
+              expression: 'logeventid(/Windows Server DHCP Server/eventlog[Microsoft-Windows-Dhcp-Server/Operational,,,,20227,,skip])=1'
+              name: 'DHCP Server | Policy Removed'
+              priority: INFO

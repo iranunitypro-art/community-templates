@@ -1,0 +1,51 @@
+# Microsoft Windows DNS Server – Zabbix Template
+
+Monitor Microsoft DNS Server service, query throughput and failures, forwarder/zones health, and key DNS performance counters.
+
+## Overview
+Covers the **DNS** service state, query rate, recursion activity, response errors, and critical DNS Server events indicating zone transfer or forwarder issues.
+
+## Features
+- Service status: **DNS**
+- Perf counters (examples):  
+  - `DNS\Total Query Received/sec`  
+  - `DNS\Recursive Queries/sec`  
+  - `DNS\Recursive Timeouts/sec` (if available)  
+- Event log: common DNS Server errors (zone transfer failures, forwarder unreachable)
+
+## Triggers
+- **DNS service down**
+- **Zero query rate for 10m** (on active servers)
+- **Recursive timeouts high**
+- **Zone transfer/forwarder error detected** (event)
+
+## Macros
+| Macro | Default | Description |
+|------|---------|-------------|
+| `{$DNS.QPS.MIN}` | `1` | Minimum expected QPS; 0 for passive |
+| `{$DNS.RECURSIVE.TIMEOUTS.WARN}` | `5` | Threshold for timeouts/sec |
+| `{$DNS.EVENT.SEVERITY}` | `warning` | Minimum event severity to alert |
+
+## Requirements
+- Zabbix **7.x** agent on the DNS server
+- Windows DNS role installed
+- Zabbix agent permission to read DNS perf counters and DNS event log
+
+## Installation
+1. **Import** `template_windows_dns_server.yaml`.
+2. **Link** to DNS hosts.
+3. Confirm perf counters exist on your OS build (names can vary); adjust item keys if needed.
+4. Review event-based items and enable what you need.
+
+## Tested
+- Zabbix 6.0
+- Windows Server 2019/2022 DNS
+
+## Notes
+Counter names may differ between OS builds/languages. Tune thresholds for your normal QPS.
+
+## License
+MIT
+
+## Author
+Mohammad.Nasiri@live.com
